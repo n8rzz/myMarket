@@ -7,32 +7,22 @@
                                        'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
-<!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-  </script> 
-<![endif]-->
+
+<%= render 'layouts/ie' %>
+
 </head>
 <body>
 
-<header class="navbar">
-	<div class="container">
-		<nav>
-			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home",			'#' %></li>
-				<li><%= link_to "Top 10",		'#' %></li>
-				<li><%= link_to "Calculators",	'#' %></li>
-				<li><%= link_to "Help",			'#' %></li>
-			</ul>
-		</nav>
+	<%= render 'layouts/header' %>
+
+
+	<div class="container-fluid">
+		<%= yield %>
 	</div>
-</header>
 
-<div class="container-fluid">
 
-<%= yield %>
-
-</div>
-
+	<%= render 'layouts/footer' %>
+ 
 
 </body>
 </html>
