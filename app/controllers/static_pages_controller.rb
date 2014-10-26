@@ -12,4 +12,7 @@ class StaticPagesController < ApplicationController
   def calculators
   end
   
+  def top10
+  end
+
 end
