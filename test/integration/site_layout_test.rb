@@ -11,5 +11,5 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", top10_path
 		assert_select "a[href=?]", calculators_path
 	end #layout links
-
+ 
 end
