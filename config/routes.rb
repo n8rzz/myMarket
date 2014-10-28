@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   match '/calculators', to: 'static_pages#calculators',   via: 'get'
   match '/top10',		to: 'static_pages#top10',		  via: 'get'
   match '/about',		to: 'static_pages#about',		  via: 'get'
+
+  match '/signup',		to: 'users#new',				  via: 'get'
   resources :users
 end
