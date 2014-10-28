@@ -2,12 +2,36 @@
 
 <div class="row">
 	<div class="col-sm-9">
-		{{ data }}
+		<ul>
+			<li>{{ current holdings }}
+				<ul>
+					<li>{{ options }}</li>
+					<li>{{ stock }}</li>
+				</ul>
+			</li>
+			<li>{{ watchlists }}
+				<ul>
+					<li>{{ new }}</li>
+					<li>{{ edit }}</li>
+					<li>{{ import }}</li>
+				</ul>
+			</li>
+			<li>{{ options }}</li>
+			<li>{{ stock }}</li>
+		</ul>
 	</div>
 
 	<div class="col-sm-3">
 		<h3><%= @user.name %></h3>
 		<small><%= @user.email %></small>
+
+		<hr />
+
+		<ul>
+			<li>{{ transactions }}</li>
+			<li>{{ performance }}</li>
+			<li>{{ settings }}</li>
+		</ul>
 	</div>
 
 </div>
