@@ -10,10 +10,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", about_path
 		assert_select "a[href=?]", top10_path
 		assert_select "a[href=?]", calculators_path
+		assert_select "a[href=?]", signup_path
 	end #layout links
-
-#	test "user links" do 
-#		assert_select "a[href=?]", signup_path
-#	end #user links
  
 end
