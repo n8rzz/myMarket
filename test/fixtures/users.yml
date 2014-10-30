@@ -3,3 +3,8 @@ harry:
   name: Harry Douglas
   email: harry@harrydouglas.com
   password_digest: <%= User.digest('password') %>
+
+gandolf:
+  name: Gandolf leGrey
+  email: gandolf@wizardry.net
+  password_digest: <%= User.digest('password') %>
