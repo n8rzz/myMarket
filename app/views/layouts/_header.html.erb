@@ -1,6 +1,16 @@
 <header class="navbar">
 	<div class="container">
-		<nav>
+		<nav class="navbar" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<%= link_to "myMarket", root_path, class: "navbar-brand" %>
+
+					<% if logged_in? %>					
+					<p class="navbar-text">Signed in as {{ user }}</p>
+					<% end %>
+
+				</div>
+			
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "Home",			root_path %></li>
 
@@ -19,6 +29,8 @@
 			<% end %>
 			
 			</ul>
+
+			</div><!-- /.container-fluid -->
 		</nav>
 	</div>
 </header>
