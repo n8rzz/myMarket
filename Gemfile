@@ -15,10 +15,10 @@ gem 'sdoc', '0.4.0', group: :doc
 
 # gem 'turbolinks', '1.1.1'
 # gem 'sprockets', '2.11.0'
-# gem 'faker', '1.1.2'
+
 gem 'bootstrap-sass', '~>3.2.0.2'
-gem 'will_paginate', '3.0.4'
-gem 'bootstrap-will_paginate', '0.0.9'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug', '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring', '1.1.3'
+  gem 'faker', '1.1.2'
 end
 
 group :test do
