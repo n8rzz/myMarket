@@ -1,11 +1,15 @@
-<header class="navbar">
-	<div class="container">
-		<nav>
+<header>
+
+		<nav class="navbar" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<%= link_to "myMarket", root_path, class: "navbar-brand" %>
+				</div>
+			
 			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home",			root_path %></li>
 
 			<% if logged_in? %>
-				
+				<li><%= link_to "Users", users_path %></li>
 				<li><%= link_to "Calculators",	calculators_path %></li>
 				<li><%= link_to "Dashboard",	current_user %></li>	
 				<li><%= link_to "Edit info",	edit_user_path(current_user) %></li>	
@@ -19,6 +23,8 @@
 			<% end %>
 			
 			</ul>
+
+			</div><!-- /.container-fluid -->
 		</nav>
-	</div>
+	
 </header>
