@@ -4,11 +4,6 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<%= link_to "myMarket", root_path, class: "navbar-brand" %>
-
-					<% if logged_in? %>					
-						<p class="navbar-text">Signed in as {{ user.name }}</p>
-					<% end %>
-
 				</div>
 			
 			<ul class="nav navbar-nav navbar-right">
