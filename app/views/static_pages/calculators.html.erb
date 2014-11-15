@@ -2,11 +2,457 @@
 <h1>Calculators</h1>
 
 <ul>
-	<li>{{ constants [default | user set in settings] }}</li>
-	<li>{{ options }}</li>
-	<li>{{ quick calc }}</li>
-	<li>{{ extended calc }}</li>
-	<li>{{ legs }}</li>
+  <li><a href="#options-calc">{{ options }}</a></li>
+  <li><a href="#stock-constants">{{ constants [default | user set in settings] }}</a></li>
+  <li><a href="#stock-quick-calc">{{ quick calc }}</a></li>
+  <li><a href="#extended-calc">{{ extended calc }}</a></li>
+  <li><a href="#stock-legs">{{ legs }}</a></li>
 </ul>
 
 
+<div class="row">
+
+  <div class="col-sm-4">
+    <table id="options-calc" border="1">
+        <caption>options constants</caption>
+        <tr>
+            <th>ticker</th>
+            <td>{{ INPUT }}</td>
+        </tr>
+        <tr>
+            <th>current</th>
+            <td>{{ INPUT }}</td>
+        </tr>
+        <tr>
+            <th>strike gain %</th>
+            <td>{{ INPUT }}</td>
+        </tr>
+        <tr>
+            <th>contract delta</th>
+            <td>{{ INPUT }}</td>
+        </tr>
+        <tr>
+            <th>theta</th>
+            <td>{{ INPUT }}</td>
+        </tr>
+        <tr>
+            <th>move for gain</th>
+            <td>{{ data }}</td>
+        </tr>
+        <tr>
+            <th>days</th>
+            <td>{{ data }}</td>
+        </tr>
+        <tr>
+            <th>decay</th>
+            <td>{{ data }}</td>
+        </tr>
+    </table>
+  </div><!-- /.col-sm-4 -->
+
+  <div class="col-sm-8">
+    <table border="1">
+        <caption>options calc</caption>
+        <tr>
+            <th>contracts</th>
+            <td colspan="2">{{ INPUT }}</td>
+            <th></th>
+        </tr>
+        <tr>
+            <th>size</th>
+            <td colspan="2">{{ INPUT }}</td>
+            <th></th>
+        </tr>
+        <tr>
+            <th>ask</th>
+            <td>{{ INPUT }}</td>
+            <td>{{ INPUT }}</td>
+            <th>bid</th>
+        </tr>
+        <tr>
+            <th>b bid</th>
+            <td>{{ INPUT }}</td>
+            <td>{{ data }}</td>
+            <th>sell bid</th>
+        </tr>
+        <tr>
+            <th>gross</th>
+            <td>{{ data }}</td>
+            <td>{{ data }}</td>
+            <th>gross</th>
+        </tr>
+        <tr>
+            <th>net in</th>
+            <td>{{ data }}</td>
+            <td>{{ data }}</td>
+            <th>net out</th>
+        </tr>
+        <tfoot>
+            <tr>
+                <th colspan="2">strike g/l $</th>
+                <th colspan="2">{{ data }}</th>
+            </tr>
+            <tr>
+                <th colspan="2">strike g/l %</th>
+                <th colspan="2">{{ data }}</th>
+            </tr>
+            <tr>
+                <th colspan="2">g/l $</th>
+                <th colspan="2">{{ data }}</th>
+            </tr>
+            <tr>
+                <th colspan="2">g/l %</th>
+                <th colspan="2">{{ data }}</th>
+            </tr>
+            <tr>
+                <th colspan="2">total fees</th>
+                <th colspan="2">{{ data }}</th>
+            </tr>
+        </tfoot>
+
+    </table>
+  </div><!-- /.col-sm-8 -->
+</div><!-- /.row -->
+
+
+<div class="row">
+  <div class="col-sm-4">
+    <table id="stock-constants" border="1">
+        <caption>stock constants</caption>
+        <tr>
+            <th>cash</th>
+            <td>{{ data }}</td>
+        </tr>
+        <tr>
+            <th>delta</th>
+            <td>{{ data }}</td>
+        </tr>
+        <tr>
+            <th>delta $</th>
+            <td>{{ data }}</td>
+        </tr>
+        <tr>
+            <th>d -c</th>
+            <td>{{ data }}</td>
+        </tr>
+    </table>
+  </div><!-- /.col-sm-4 -->
+
+  <div class="col-sm-8">
+    <table id="stock-quick-calc" border="1">
+      <caption>calc inputs</caption>
+      <tr>
+        <th>long/short</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>shares</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>bid</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>desired bid</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>ask</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>desired ask</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>desired g/l %</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>buy fee</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>sell fee</th>
+        <td>{{ INPUT }}</td>
+      </tr>
+      <tr>
+        <th>delta shares</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>bid delta $</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>ask delta shares</th>
+        <td>{{ data }}</td>
+      </tr>
+    </table>
+  </div><!-- /.col-sm-8 -->
+</div><!-- /.row -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <table id="quick-calc" border="1">
+        <caption>quick calc</caption>
+        <thead>
+            <tr>
+                <th colspan="5">Long</th>
+                <th colspan="5">Short</th>
+            </tr>
+            <tr>
+                <th>total</th>
+                <th>net</th>
+                <th>fee</th>
+                <th>{ bid }</th>
+                <th colspan="2">{ shares }</th>
+                <th>{ ask }</th>
+                <th>fee</th>
+                <th>net</th>
+                <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ data }}</td>
+                <td>{{ data }}</td>
+                <td>{{ data }}</td>
+                <td>{{ C }}</td>
+                <td colspan="2">{{ C }}</td>
+                <td>{{ C }}</td>
+                <td>{{ data }}</td>
+                <td>{{ data }}</td>
+                <td>{{ data }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div><!-- /.col-sm-12 -->
+</div><!-- /.row -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <table border="1">
+    <caption>inputs calc</caption>
+    <thead>
+      <tr>
+        <th colspan="6">Long</th>
+        <th colspan="6">Short</th>
+      </tr>
+      <tr>
+        <th>total</th>
+        <th>net</th>
+        <th>gross</th>
+        <th>pos g/l %</th>
+        <th>pos g/l $</th>
+        <th>{ ask }</th>
+        <th>{ bid }</th>
+        <th>pos g/l $</th>
+        <th>pos g/l %</th>
+        <th>gross</th>
+        <th>net</th>
+        <th>total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ C }}</td>
+        <td>{{ C }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ C }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ C }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ C }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ C }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+        <td>{{ data }}</td>
+      </tr>
+    </tbody>
+    </table>
+    </div><!-- /.col-sm-12 -->
+</div><!-- /.row -->
+
+<div class="row>">
+  <div class="col-sm-12">
+    <table id="extended-calc" border="1">
+      <caption>extended calc</caption>
+      <thead>
+          <tr>
+              <th>pos p/l</th>
+              <th>net</th>
+              <th>gross</th>
+              <th>stock p/l %</th>
+              <th>pos g/l %</th>
+              <th>current</th>
+              <th>pos g/l %</th>
+              <th>stock g/l %</th>
+              <th>gross</th>
+              <th>net</th>
+              <th>pos p/l</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ C }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+              <td>{{ data }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div><!-- /.col-sm-12 -->
+</div><!-- /.row -->
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <table id="stock-legs" table border="1">
+      <caption>legs - constants</caption>
+      <tr>
+        <th>avail $</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>delta $</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>delta %</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>reinvest %</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>rebuy loss %</th>
+        <td>{{ data }}</td>
+      </tr>
+      <tr>
+        <th>fee p/trade</th>
+        <td>{{ data }}</td>
+      </tr>
+    </table>
+
+    <table id="stock-legs" border="1">
+      <caption>legs - calcs</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>leg 1</th>
+          <th>leg 2</th>
+          <th>leg 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>start shares</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>start ask</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>leg shares</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>ask p/leg</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>avg share $</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>trade price</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>fee p/trade</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>total trade price</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>cumulative investment</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>total fees</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+        <tr>
+          <th>actual delta</th>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+          <td>{{ data }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.col-sm-12 -->
+</div><!-- /.row -->
