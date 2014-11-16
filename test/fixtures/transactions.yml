@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first:
+  ticker: AAPL
+  shares: 1
+  entryprice: 500.32
+  fee: 9.99
+  created_at: <%= 6.months.ago %>
+
+second:
+  ticker: PLUG
+  shares: 1700
+  entryprice: 2.13
+  fee: 9.99
+  created_at: <%= 2.months.ago %>
+
+most_recent:
+  ticker: HAL
+  shares: 700
+  entryprice: 62.13
+  fee: 9.99
+  created_at: <%= Time.zone.now %>

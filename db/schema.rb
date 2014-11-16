@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103040950) do
+ActiveRecord::Schema.define(version: 20141116050251) do
+
+  create_table "transactions", force: true do |t|
+    t.string   "ticker"
+    t.integer  "shares"
+    t.decimal  "entryprice", precision: 12, scale: 4
+    t.decimal  "fee",        precision: 6,  scale: 2
+    t.integer  "user_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "transactions", ["user_id", "created_at"], name: "index_transactions_on_user_id_and_created_at"
+  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
