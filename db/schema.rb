@@ -16,30 +16,17 @@ ActiveRecord::Schema.define(version: 20141119055351) do
   create_table "stocks", force: true do |t|
     t.string   "ticker"
     t.integer  "shares"
-    t.decimal  "entryprice"
-    t.decimal  "entryfee"
-    t.decimal  "exitprice"
-    t.decimal  "exitfee"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "stocks", ["user_id", "created_at"], name: "index_stocks_on_user_id_and_created_at"
-  add_index "stocks", ["user_id"], name: "index_stocks_on_user_id"
-
-  create_table "transactions", force: true do |t|
-    t.string   "ticker"
-    t.integer  "shares"
     t.decimal  "entryprice", precision: 12, scale: 4
-    t.decimal  "fee",        precision: 6,  scale: 2
+    t.decimal  "exitprice",  precision: 12, scale: 4
+    t.decimal  "entryfee",   precision: 6,  scale: 2
+    t.decimal  "exitfee",    precision: 6,  scale: 2
     t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "transactions", ["user_id", "created_at"], name: "index_transactions_on_user_id_and_created_at"
-  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
+  add_index "stocks", ["user_id", "created_at"], name: "index_stocks_on_user_id_and_created_at"
+  add_index "stocks", ["user_id"], name: "index_stocks_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

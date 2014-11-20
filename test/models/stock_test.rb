@@ -21,10 +21,10 @@ class StockTest < ActiveSupport::TestCase
     assert_not @stock.valid?
   end
 
-  test "stock ticker should be saved upcase" do
-    @stock.ticker = "hal"
-    assert_not @stock.valid?
-  end
+#  test "stock ticker should be saved upcase" do
+#    @stock.ticker = "hal"
+#    assert_not @stock.valid?
+#  end
 
   test "stock shares should be present" do
     @stock.shares = " "
