@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: MyString
+  shares: 1
+  entryprice: 9.99
+  entryfee: 9.99
+  exitprice: 9.99
+  exitfee: 9.99
+  user_id: 
+
+two:
+  ticker: MyString
+  shares: 1
+  entryprice: 9.99
+  entryfee: 9.99
+  exitprice: 9.99
+  exitfee: 9.99
+  user_id: 
