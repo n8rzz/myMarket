@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get 'users/new'
 
   resources :stocks
-  #resources :options
+  resources :options
 end
