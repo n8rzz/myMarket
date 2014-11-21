@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119055351) do
+ActiveRecord::Schema.define(version: 20141121034241) do
+
+  create_table "options", force: true do |t|
+    t.string   "ticker"
+    t.string   "side"
+    t.string   "optiontype"
+    t.string   "expiration"
+    t.integer  "contracts"
+    t.integer  "size"
+    t.decimal  "strike",     precision: 6,  scale: 2
+    t.decimal  "entryfee",   precision: 6,  scale: 2
+    t.decimal  "exitfee",    precision: 6,  scale: 2
+    t.decimal  "entryprice", precision: 12, scale: 4
+    t.decimal  "exitprice",  precision: 12, scale: 4
+    t.integer  "user_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "options", ["user_id", "ticker", "created_at"], name: "index_options_on_user_id_and_ticker_and_created_at"
+  add_index "options", ["user_id"], name: "index_options_on_user_id"
 
   create_table "stocks", force: true do |t|
     t.string   "ticker"
@@ -25,7 +45,7 @@ ActiveRecord::Schema.define(version: 20141119055351) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "stocks", ["user_id", "created_at"], name: "index_stocks_on_user_id_and_created_at"
+  add_index "stocks", ["user_id", "ticker", "created_at"], name: "index_stocks_on_user_id_and_ticker_and_created_at"
   add_index "stocks", ["user_id"], name: "index_stocks_on_user_id"
 
   create_table "users", force: true do |t|

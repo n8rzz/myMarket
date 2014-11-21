@@ -1,0 +1,49 @@
+<h1>New Option</h1>
+
+<%= form_for(@option) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+
+  <div>
+    <%= f.label :ticker %> <%= f.text_field :ticker %>
+  </div>
+  <div>
+    <%= f.radio_button :side, "call" %>  <%= f.label :side_call, "call" %>
+    <%= f.radio_button :side, "put" %>  <%= f.label :side_buy, "put" %>
+  </div>
+  <div>
+    <%= f.radio_button :optiontype, "buy" %>  <%= f.label :optiontype_buy, "buy" %>
+    <%= f.radio_button :optiontype, "sell" %>  <%= f.label :optiontype_sell, "sell" %>
+  </div>
+  <div>
+    <%= f.label :expiration %> <%= f.date_field :expiration %>
+  </div>
+  <div>
+    <%= f.label :contracts %> <%= f.number_field :contracts, in: 1..100000, step: 1 %>
+  </div>
+   <div>
+    <%= f.label :size %> <%= f.number_field :size %>
+  </div>
+   <div>
+    <%= f.label :strike %> <%= f.number_field :strike, in: 0..2000, step: 0.5 %>
+  </div>
+  <div>
+    <%= f.label :entryprice %> <%= f.text_field :entryprice %>
+  </div>
+  <div>
+    <%= f.label :entryfee %> <%= f.text_field :entryfee %>
+  </div>
+  <div>
+    <%= f.label :exitprice %> <%= f.text_field :exitprice %>
+  </div>
+  <div>
+    <%= f.label :exitfee %> <%= f.text_field :exitfee %>
+  </div>
+
+<br />
+
+  <div>
+    <%= f.submit "Add option" %>
+  </div>
+
+<% end %>

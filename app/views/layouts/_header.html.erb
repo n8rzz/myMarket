@@ -11,9 +11,9 @@
 			<% if logged_in? %>
 				<li><%= link_to "Calculators",	calculators_path %></li>
 				<li><%= link_to "Stocks",				stocks_path %></li>
-				<li><%= link_to "Options",			'#' %></li>
-				<li><%= link_to "Dashboard",	current_user %></li>
-				<li><%= link_to "Log out",		logout_path, method: "delete" %></li>
+				<li><%= link_to "Options",			options_path %></li>
+				<li><%= link_to "Dashboard",		current_user %></li>
+				<li><%= link_to "Log out",			logout_path, method: "delete" %></li>
 
 			<% else %>
 

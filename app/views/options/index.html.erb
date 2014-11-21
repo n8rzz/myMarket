@@ -1,0 +1,42 @@
+<table class="table" cellpadding="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>ticker</th>
+      <th>b/s</th>
+      <th>c/p</th>
+      <th>contracts</th>
+      <th>size</th>
+      <th>expiration</th>
+      <th>strike</th>
+      <th>entry$</th>
+      <th>b fee</th>
+      <th>exit $</th>
+      <th>s fee</th>
+      <th colspan="3">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @options.each do |option| %>
+    <tr>
+      <td><%= link_to option.ticker, option %></td>
+      <td><%= option.side %></td>
+      <td><%= option.optiontype %></td>
+      <td><%= option.contracts %></td>
+      <td><%= option.size %></td>
+      <td><%= option.expiration %></td>
+      <td><%= option.strike %></td>
+      <td><%= option.entryprice %></td>
+      <td><%= option.entryfee %></td>
+      <td><%= option.exitprice %></td>
+      <td><%= option.exitfee %></td>
+      <td><%= link_to 'Show', option %></td>
+      <td><%= link_to 'Edit', edit_option_path(option) %></td>
+      <td><%= link_to 'Delete', option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<p><%= link_to "New Option", new_option_path %></p>
