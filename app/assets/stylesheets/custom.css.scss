@@ -31,8 +31,9 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
-input[type="radio"] {
+input[type="radio"], input[type="date"] {
   width: auto;
+  line-height: 22px;
 }
 #error_explanation {
   color: red;
