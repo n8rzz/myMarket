@@ -1,5 +1,6 @@
 class Stock < ActiveRecord::Base
   belongs_to :user
+  validates :user_id, presence: true
 
   before_save { ticker.upcase! }
   default_scope -> { order('created_at ASC') }
