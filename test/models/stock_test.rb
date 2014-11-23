@@ -11,6 +11,11 @@ class StockTest < ActiveSupport::TestCase
     assert @stock.valid?
   end
 
+  test "user id should be present" do
+    @stock.user_id = nil
+    assert_not @stock.valid?
+  end
+
   test "stock ticker should be present" do
     @stock.ticker = " "
     assert_not @stock.valid?

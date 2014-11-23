@@ -1,5 +1,6 @@
 class Option < ActiveRecord::Base
   belongs_to :user
+  validates :user_id, presence: true
 
   validates :ticker, presence: true, length: { maximum: 6 }
   validates :side, presence: true
