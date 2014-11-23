@@ -1,0 +1,24 @@
+<table class="table" cellpadding="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>ticker</th>
+      <th>shares</th>
+      <th>entry $</th>
+      <th>entry fee</th>
+      <th>exit $</th>
+      <th>exit fee</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @stock.ticker %></td>
+      <td><%= @stock.shares %></td>
+      <td><%= number_with_precision @stock.entryprice, :precision => 4 %></td>
+      <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
+      <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
+      <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to 'All Stocks', stocks_path %> | <%= link_to 'New Stock', new_stock_path %> | <%= link_to 'Edit', edit_stock_path(@stock) %> | <%= link_to 'Delete', @stock, method: :delete, data: { confirm: 'Are you sure?' } %></p>

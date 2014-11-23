@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: CAT
+  side: Buy
+  optiontype: Call
+  contracts: 5
+  size: 100
+  expiration: 01/18/2015
+  strike: 90.00
+  entryprice: 1.88
+  entryfee: 13.74
+  exitprice: 0
+  exitfee: 13.74
+  user_id: 1

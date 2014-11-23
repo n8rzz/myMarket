@@ -1,15 +1,37 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-	<div class="col-sm-9">
+	<div class="col-sm-10">
+		<h1>Current Holdings</h1>
+
+
+		<%= render 'portfolio_options' %>
+<br /><br />
+		<%= render 'portfolio_stock' %>
+
+<hr />
+
+	<h1>Transactions</h1>
+
+		<%= render 'transactions_options' %>
+<br /><br />
+		<%= render 'transactions_stock' %>
+
+
+	</div><!-- /.col-sm-10 -->
+
+
+
+	<div class="col-sm-2">
+		<h4><%= @user.name %></h4>
+		<small><%= @user.email %></small>
+
+		<hr />
+
 		<ul>
-			<li>{{ current holdings }}
-				<ul>
-					<li>{{ all }}</li>
-					<li>{{ options }}</li>
-					<li>{{ stock }}</li>
-				</ul>
-			</li>
+			<li>{{ portfolio }}</li>
+			<li>{{ transactions }}</li>
+			<li>{{ performance }}</li>
 			<li>{{ watchlists }}
 				<ul>
 					<li>{{ new }}</li>
@@ -17,20 +39,11 @@
 					<li>{{ import }}</li>
 				</ul>
 			</li>
-		</ul>
-	</div><!-- /.col-sm-9 -->
-
-	<div class="col-sm-3">
-		<h3><%= @user.name %></h3>
-		<small><%= @user.email %></small>
-
-		<hr />
-
-		<ul>
-			<li>{{ transactions }}</li>
-			<li>{{ performance }}</li>
 			<li>{{ settings }}</li>
+				<ul>
+					<li><%= link_to "Edit info",	edit_user_path(current_user) %></li>
+				</ul>
 		</ul>
-	</div><!-- /.col-sm-3 -->
+	</div><!-- /.col-sm-2 -->
 
 </div><!-- /.row -->
