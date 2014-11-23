@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  
+
  	def setup
 		@user = users(:harry)
 		@other_user = users(:gandolf)
@@ -22,10 +22,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
-  test "should redirect index when not logged in" do 
+  test "should redirect index when not logged in" do
     get :index
-    assert_redirected_to login_url
-  end #should redirect index when not logged in
+    assert_redirected_to root_url
+  end
 
   test "should redirect edit when logged in as wrong user" do
     log_in_as(@other_user)
@@ -39,19 +39,25 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
-  test "should redirect destroy when not logged in" do 
+  test "should redirect users index when logged in as non-admin" do
+    log_in_as(@other_user)
+    get :index
+    assert_redirected_to root_url
+  end
+
+  test "should redirect destroy when not logged in" do
     assert_no_difference 'User.count' do
       delete :destroy, id: @user
     end
     assert_redirected_to root_url
-  end #redirect destroy when not logged in
+  end
 
-  test "should redirect destroy when logged in as a non-admin" do 
+  test "should redirect destroy when logged in as a non-admin" do
     log_in_as(@other_user)
     assert_no_difference 'User.count' do
       delete :destroy, id: @user
-    end 
+    end
     assert_redirected_to root_url
-  end #redirect destroy when logged in as non-admin
+  end
 
 end
