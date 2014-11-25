@@ -15,7 +15,7 @@ class OptionsController < ApplicationController
   end
 
   def create
-    @option = Option.new(option_params)
+    @option = current_user.options.build(option_params)
     if @option.save
       flash[:success] = "Option Added!"
       redirect_to @option

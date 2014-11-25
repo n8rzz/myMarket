@@ -1,7 +1,6 @@
 class StocksController < ApplicationController
   before_action :logged_in_user
 
-
   def index
     @stocks = Stock.all
   end
@@ -15,7 +14,7 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new(stock_params)
+    @stock = current_user.stocks.build(stock_params)
     @stock.ticker = params[:stock][:ticker].upcase
     if @stock.save
       flash[:success] = "Stock Added!"
