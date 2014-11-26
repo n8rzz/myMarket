@@ -27,7 +27,13 @@
   <br />
 
   <div>
-    <%= f.submit "Save Changes" %>
+    <%= f.submit "Save Changes", class: "btn btn-success" %>
+  </div>
+
+  <br />
+
+  <div>
+    <button type="button" class="btn btn-danger" style="width:100%;color:#fff;"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <%= link_to 'Delete Stock', @stock, method: :delete, data: { confirm: 'Are you sure want to delete this holding?  This action cannot be undone!' } %></button>
   </div>
 
 <% end %>
