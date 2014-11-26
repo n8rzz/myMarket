@@ -18,20 +18,39 @@
 
 
 	<div class="col-sm-10">
-		<h1>Current Holdings</h1>
-<!-- see _portfolio partials -->
-		<h4>Options</h4>
-<br />
-		<h4>Stock</h4>
+		<h3>Current Holdings</h3>
+
+<!--		<h4>Options</h4>
+<br /> -->
+		<% if @user.stocks.any? %>
+			<h4>Stocks (<%= @user.stocks.count %>)</h4>
+			<table class="table" cellpadding="0" cellpadding="0">
+			  <thead>
+			    <tr>
+			      <th>ticker</th>
+			      <th>shares</th>
+			      <th>entry $</th>
+			      <th>entry fee</th>
+			      <th>exit $</th>
+			      <th>exit fee</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+
+					<%= render @stocks %>
+
+			  </tbody>
+			</table>
+		<% end %>
 
 <hr />
 
-	<h1>Transactions</h1>
+<!--	<h1>Transactions</h1> -->
 <!-- see _transaction partials -->
-		<h4>Options</h4>
+<!--		<h4>Options</h4>
 <br />
 		<h4>Stock</h4>
-
+-->
 	</div><!-- /.col-sm-10 -->
 
 

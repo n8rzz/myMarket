@@ -1,0 +1,9 @@
+
+    <tr>
+      <td><%= stock.ticker %></td>
+      <td><%= stock.shares %></td>
+      <td><%= number_with_precision stock.entryprice, :precision => 4 %></td>
+      <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
+      <td><%= number_with_precision stock.exitprice, :precision => 4 %></td>
+      <td><%= number_with_precision stock.exitfee, :precision => 2 %></td>
+    </tr>
