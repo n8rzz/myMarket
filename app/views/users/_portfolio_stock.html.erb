@@ -1,111 +1,22 @@
-<h3>Stock Holdings</h3>
-    <table id="stock-portfolio" border="1" style="font-size:11px;">
-    <thead>
-        <tr>
-            <th>ticker</th>
-            <th>shares</th>
-            <th>entry price</th>
-            <th>b/s signal</th>
-            <th>last price</th>
-            <th>day change %</th>
-            <th>target price</th>
-            <th>stop</th>
-            <th>pos change</th>
-            <th>pos change %</th>
-            <th>Invest</th>
-            <th>mkt value $</th>
-            <th>fee b&s</th>
-            <th>cost basis</th>
-            <th>Unrealised Gain/Loss</th>
-            <th>Unrealised Gain/Loss (%)</th>
-            <th>% cost</th>
-            <th>% port</th>
-            <th>% gain goal</th>
-            <th>% max loss</th>
-            <th>proj delta $</th>
-            <th>delta %</th>
-            <th>act delta $</th>
-            <th>shares to add</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-        </tr>
-        <tr>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-        </tr>
-        <tr>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-            <td>{{ data }}</td>
-        </tr>
-    </tbody>
+<table class="table" cellpadding="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>ticker</th>
+      <th>shares</th>
+      <th>entry $</th>
+      <th>entry fee</th>
+      <th>exit $</th>
+      <th>exit fee</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @stocks.ticker %></td>
+      <td><%= @stocks.shares %></td>
+      <td><%= number_with_precision @stocks.entryprice, :precision => 4 %></td>
+      <td><%= number_with_precision @stocks.entryfee, :precision => 2 %></td>
+      <td><%= number_with_precision @stocks.exitprice, :precision => 4 %></td>
+      <td><%= number_with_precision @stocks.exitfee, :precision => 2 %></td>
+    </tr>
+  </tbody>
 </table>
