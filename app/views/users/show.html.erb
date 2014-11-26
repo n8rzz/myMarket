@@ -1,23 +1,23 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
+		<div class="container">
 
-	<div class="col-sm-2">
-		<h4><%= @user.name %></h4>
-		<small><%= @user.email %></small>
+			<div role="navigation">
+				<ul class="nav nav-justified" style="border-bottom: 2px solid #ccc;margin-bottom: 20px;">
+					<li><%= link_to 'Portfolio',		'#' %></li>
+					<li><%= link_to 'Transactions',	'#' %></li>
+					<li><%= link_to 'Performance',	'#' %></li>
+					<li><%= link_to 'Watchlists',		'#' %></li>
+				</ul>
+			</div>
 
-		<hr />
-
-		<ul>
-			<li>{{ portfolio }}</li>
-			<li>{{ transactions }}</li>
-			<li>{{ performance }}</li>
-			<li>{{ watchlists }}</li>
-		</ul>
-	</div><!-- /.col-sm-2 -->
+		</div><!-- /.container -->
+</div><!-- /.row -->
 
 
-	<div class="col-sm-10">
+<div class="row">
+	<div class="col-sm-12">
 		<h3>Current Holdings</h3>
 
 		<% if @user.options.any? %>
