@@ -1,26 +1,6 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-	<div class="col-sm-10">
-		<h1>Current Holdings</h1>
-
-
-		<%= render 'portfolio_options' %>
-<br /><br />
-		<%= render 'portfolio_stock' %>
-
-<hr />
-
-	<h1>Transactions</h1>
-
-		<%= render 'transactions_options' %>
-<br /><br />
-		<%= render 'transactions_stock' %>
-
-
-	</div><!-- /.col-sm-10 -->
-
-
 
 	<div class="col-sm-2">
 		<h4><%= @user.name %></h4>
@@ -32,18 +12,72 @@
 			<li>{{ portfolio }}</li>
 			<li>{{ transactions }}</li>
 			<li>{{ performance }}</li>
-			<li>{{ watchlists }}
-				<ul>
-					<li>{{ new }}</li>
-					<li>{{ edit }}</li>
-					<li>{{ import }}</li>
-				</ul>
-			</li>
-			<li>{{ settings }}</li>
-				<ul>
-					<li><%= link_to "Edit info",	edit_user_path(current_user) %></li>
-				</ul>
+			<li>{{ watchlists }}</li>
 		</ul>
 	</div><!-- /.col-sm-2 -->
+
+
+	<div class="col-sm-10">
+		<h3>Current Holdings</h3>
+
+		<% if @user.options.any? %>
+		<h4>Options (<%= @user.options.count %>)</h4>
+		<table class="table table-striped table-hover text-center" cellpadding="0" cellpadding="0">
+		  <thead>
+		    <tr>
+		      <th scope="col">ticker</th>
+		      <th scope="col">b/s</th>
+		      <th scope="col">c/p</th>
+		      <th scope="col">contracts</th>
+		      <th scope="col">size</th>
+		      <th scope="col">expiration</th>
+		      <th scope="col">strike</th>
+		      <th scope="col">entry$</th>
+		      <th scope="col">b fee</th>
+		      <th scope="col">exit $</th>
+		      <th scope="col">s fee</th>
+		      <th scope="col">actions</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+
+			<%= render @options %>
+
+		  </tbody>
+		</table>
+		<% end %>
+
+
+		<% if @user.stocks.any? %>
+			<h4>Stocks (<%= @user.stocks.count %>)</h4>
+			<table class="table table-striped table-hover text-center" cellpadding="0" cellpadding="0">
+			  <thead>
+			    <tr>
+			      <th>ticker</th>
+			      <th>shares</th>
+			      <th>entry $</th>
+			      <th>entry fee</th>
+			      <th>exit $</th>
+			      <th>exit fee</th>
+			      <th>actions</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+
+					<%= render @stocks %>
+
+			  </tbody>
+			</table>
+		<% end %>
+
+
+<!--	<h1>Transactions</h1> -->
+<!-- see _transaction partials -->
+<!--		<h4>Options</h4>
+<br />
+		<h4>Stock</h4>
+-->
+	</div><!-- /.col-sm-10 -->
+
 
 </div><!-- /.row -->
