@@ -1,0 +1,7 @@
+<h1>myMarket</h1>
+
+<p>Hello <%= @user.name %>,</p>
+
+<p>Welcome to MyMarket!  Follow the link below to complete you account activation:</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
