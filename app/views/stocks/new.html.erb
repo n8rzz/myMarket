@@ -17,17 +17,11 @@
     <div>
     <%= f.label :entryfee %> <%= f.text_field :entryfee %>
   </div>
-    <div>
-    <%= f.label :exitprice %> <%= f.text_field :exitprice %>
-  </div>
-    <div>
-    <%= f.label :exitfee %> <%= f.text_field :exitfee %>
-  </div>
 
   <br />
 
   <div>
-    <%= f.submit "Add Stock" %>
+    <%= f.submit "Add Stock", class: "btn btn-success" %>
   </div>
 
 <% end %>
