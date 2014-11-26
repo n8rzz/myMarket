@@ -65,43 +65,17 @@
   </div><!-- /.col-sm-8 -->
 </div><!-- /.row -->
 
+<br />
+
+<div class="row">
+  <div class="container">
+
+
+<h3><%= @option.ticker %> History</h3>
 
 <hr />
 
-<h3><%= @option.ticker %> History</h3>
-<table class="table table-striped" cellpadding="0" cellpadding="0">
-  <thead>
-    <tr>
-      <th scope="col">ticker</th>
-      <th scope="col">b/s</th>
-      <th scope="col">c/p</th>
-      <th scope="col">contracts</th>
-      <th scope="col">size</th>
-      <th scope="col">expiration</th>
-      <th scope="col">strike</th>
-      <th scope="col">entry$</th>
-      <th scope="col">b fee</th>
-      <th scope="col">exit $</th>
-      <th scope="col">s fee</th>
-      <th scope="col">p/l</th>
-      <th scope="col">days held</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @option.ticker %></td>
-      <td><%= @option.side %></td>
-      <td><%= @option.optiontype %></td>
-      <td><%= @option.contracts %></td>
-      <td><%= @option.size %></td>
-      <td><%= @option.expiration %></td>
-      <td><%= @option.strike %></td>
-      <td><%= @option.entryprice %></td>
-      <td><%= @option.entryfee %></td>
-      <td><%= @option.exitprice %></td>
-      <td><%= @option.exitfee %></td>
-      <td>.</td>
-      <td>.</td>
-    </tr>
-  </tbody>
-</table>
+<%= render 'shared/history_options' %>
+
+  </div><!-- /.container -->
+</div><!-- /.row -->

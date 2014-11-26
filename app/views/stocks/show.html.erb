@@ -42,35 +42,18 @@
     <%= image_tag("charts-placeholder.jpg", size: "600x300") %>
 
   </div><!-- /.col-md-8 -->
-
 </div><!-- /.row -->
 
-<hr />
+<br />
 
-<h3><%= @stock.ticker %> History</h3>
-<table class="table table-striped" cellpadding="0" cellpadding="0">
-  <thead>
-    <tr>
-      <th scope="col">ticker</th>
-      <th scope="col">shares</th>
-      <th scope="col">entry $</th>
-      <th scope="col">entry fee</th>
-      <th scope="col">exit $</th>
-      <th scope="col">exit fee</th>
-      <th scope="col">p/</th>
-      <th scope="col">days held</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @stock.ticker %></td>
-      <td><%= @stock.shares %></td>
-      <td><%= number_with_precision @stock.entryprice, :precision => 4 %></td>
-      <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
-      <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
-      <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
-      <td>.</td>
-      <td>.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <div class="container">
+
+    <h3><%= @stock.ticker %> History</h3>
+
+    <hr />
+
+    <%= render 'shared/history_stocks' %>
+
+  </div><!-- /.container -->
+</div><!-- /.row -->
