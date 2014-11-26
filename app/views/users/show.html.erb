@@ -21,7 +21,7 @@
 		<h3>Current Holdings</h3>
 
 		<% if @user.options.any? %>
-		<h4>Options (<%= @user.options.count %>)</h4>
+		<h4>Options (<%= @user.options.count %>)  <%= link_to 'New Option', new_option_path, class: 'btn btn-primary btn-xs' %></h4>
 		<table class="table table-striped table-hover text-center" cellpadding="0" cellpadding="0">
 		  <thead>
 		    <tr>
@@ -49,7 +49,7 @@
 
 
 		<% if @user.stocks.any? %>
-			<h4>Stocks (<%= @user.stocks.count %>)</h4>
+			<h4>Stocks (<%= @user.stocks.count %>)  <%= link_to 'New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h4>
 			<table class="table table-striped table-hover text-center" cellpadding="0" cellpadding="0">
 			  <thead>
 			    <tr>
