@@ -9,43 +9,43 @@
 
     <table class="table table-striped" cellpadding="0" cellpadding="0">
         <tr>
-          <th scope="row">b/s</th>
+          <th scope="row">Buy/Sell</th>
           <td><%= @option.side %></td>
         </tr>
         <tr>
-          <th scope="row">c/p</th>
+          <th scope="row">Call/Put</th>
           <td><%= @option.optiontype %></td>
         </tr>
         <tr>
-          <th>contracts</th>
+          <th scope="row">Contracts</th>
           <td><%= @option.contracts %></td>
         </tr>
         <tr>
-          <th scope="row">size</th>
+          <th scope="row">Size</th>
           <td><%= @option.size %></td>
         </tr>
         <tr>
-          <th scope="row">expiration</th>
+          <th scope="row">Expiration</th>
           <td><%= @option.expiration %></td>
         </tr>
         <tr>
-          <th scope="row">strike</th>
+          <th scope="row">Strike</th>
           <td><%= @option.strike %></td>
         </tr>
         <tr>
-          <th scope="row">entry$</th>
+          <th scope="row">Entry $</th>
           <td><%= @option.entryprice %></td>
         </tr>
         <tr>
-          <th scope="row">b fee</th>
+          <th scope="row">Buy Fee</th>
           <td><%= @option.entryfee %></td>
         </tr>
         <tr>
-          <th scope="row">exit $</th>
+          <th scope="row">Exit $</th>
           <td><%= @option.exitprice %></td>
         </tr>
         <tr>
-          <th scope="row">s fee</th>
+          <th scope="row">Sell fee</th>
           <td><%= @option.exitfee %></td>
         </tr>
       </tbody>
@@ -61,11 +61,14 @@
   </div><!-- /.col-md-4 -->
 
   <div class="col-xs-12 col-sm-8">
-    <%= image_tag("charts-placeholder.jpg", size: "600x300") %>
+    {{ charts }}
+    <br />
+    {{ charts }}
   </div><!-- /.col-sm-8 -->
+
 </div><!-- /.row -->
 
-<br />
+<br /><br />
 
 <div class="row">
   <div class="container">
