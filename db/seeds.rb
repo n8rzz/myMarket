@@ -1,7 +1,16 @@
+### users
 User.create!(name:  "Tommy Callahan",
              email: "niner@callahanauto.com",
              password:              "36niner",
              password_confirmation: "36niner",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+User.create!(name:  "Harry Douglas",
+             email: "myharry@isdouglas.com",
+             password:              "pedro69",
+             password_confirmation: "pedro69",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
@@ -18,6 +27,7 @@ User.create!(name:  "Tommy Callahan",
                activated_at: Time.zone.now)
 end
 
+### stocks and options for Tommy Callahan
 Stock.create!(ticker: "HAL",
               shares: "100",
               entryprice: "53.66",
@@ -67,6 +77,7 @@ Option.create!(ticker: "CAT",
                exitprice: " ",
                exitfee: "17.74",
                user_id: "1")
+
 Option.create!(ticker: "AMD",
                side: "Sell",
                optiontype: "Call",
@@ -79,3 +90,59 @@ Option.create!(ticker: "AMD",
                exitprice: " ",
                exitfee: "17.74",
                user_id: "1")
+
+Option.create!(ticker: "CAT",
+               side: "Buy",
+               optiontype: "Put",
+               contracts: "2",
+               size: "100",
+               expiration: "11/18/2015",
+               strike: "100",
+               entryprice: "0.25",
+               entryfee: "13.74",
+               exitprice: "0.88",
+               exitfee: "13.74",
+               user_id: "1")
+
+Option.create!(ticker: "CAT",
+               side: "Buy",
+               optiontype: "Call",
+               contracts: "5",
+               size: "100",
+               expiration: "01/15/2015",
+               strike: "95",
+               entryprice: "1.05",
+               entryfee: "13.74",
+               exitprice: " ",
+               exitfee: "13.74",
+               user_id: "1")
+
+### stocks/options for user_id(2)
+Stock.create!(ticker: "HAL",
+              shares: "100",
+              entryprice: "53.66",
+              entryfee: "9.99",
+              exitprice: "",
+              exitfee: "",
+              user_id: "2")
+
+Stock.create!(ticker: "CAT",
+              shares: "10",
+              entryprice: "101.07",
+              entryfee: "9.99",
+              exitprice: "",
+              exitfee: "",
+              user_id: "2")
+
+Option.create!(ticker: "CAT",
+               side: "Buy",
+               optiontype: "Call",
+               contracts: "5",
+               size: "100",
+               expiration: "01/15/2015",
+               strike: "95",
+               entryprice: "1.05",
+               entryfee: "13.74",
+               exitprice: " ",
+               exitfee: "13.74",
+               user_id: "2")
