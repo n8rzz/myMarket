@@ -7,6 +7,7 @@ class StocksController < ApplicationController
 
   def show
     @stock = Stock.find(params[:id])
+#    @history = current_user.stocks.find_by(ticker: @stock.ticker)
   end
 
   def new
