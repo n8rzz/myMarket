@@ -2,9 +2,15 @@
   <td><%= link_to stock.ticker, stock %></td>
   <td><%= stock.shares %></td>
   <td><%= number_with_precision stock.entryprice, :precision => 4 %></td>
+  <td>{{ current.price }}</td>
+  <td>{{ current.pld }}</td>
+  <td>{{ current.plp }}</td>
+<!--  <td><%= number_with_precision stock.exitprice, :precision => 4 %></td> -->
   <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
-  <td><%= number_with_precision stock.exitprice, :precision => 4 %></td>
-  <td><%= number_with_precision stock.exitfee, :precision => 2 %></td>
+<!--  <td><%= number_with_precision stock.exitfee, :precision => 2 %></td> -->
+  <td>{{ entry.date }}</td>
+<!--  <td>{{ exit.date }}</td> -->
+  <td>{{ days.held }}</td>
   <td>
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group btn-group-xs" role="group" aria-label="">
