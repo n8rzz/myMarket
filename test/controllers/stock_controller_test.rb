@@ -15,6 +15,8 @@ class StocksControllerTest < ActionController::TestCase
                             entryfee: "9.99",
                             exitprice: "nil",
                             exitfee: "nil",
+                            entrydate: Time.zone.now,
+                            exitdate: " ",
                             user_id: "1"}
       end
     assert_redirected_to login_url

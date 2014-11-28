@@ -35,16 +35,18 @@ h3 {
 /* === forms === */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+input, textarea, .uneditable-input {
+  width: 100%;
 }
 
 input {
   height: auto !important;
 }
-input[type="radio"], input[type="date"] {
-  width: auto;
+input[type="radio"], input[type="date"], input[type="select"] {
+  width: auto !important;
   line-height: 22px;
 }
 #error_explanation {
