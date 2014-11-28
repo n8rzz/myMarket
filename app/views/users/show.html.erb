@@ -48,7 +48,7 @@
 
 
 		<% if @user.stocks.any? %>
-			<h3>Stocks (<%= @user.stocks.count %>)  <%= link_to 'Add New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h3>
+			<h3><%= link_to 'Stocks', stocks_path %> (<%= @user.stocks.count %>)  <%= link_to 'Add New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h3>
 			<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
 			  <thead>
 			    <tr>

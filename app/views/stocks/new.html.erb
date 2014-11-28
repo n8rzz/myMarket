@@ -8,7 +8,7 @@
 
   <div>
     <%= f.label :entrydate %><br />
-    <%= f.date_select :entrydate %>
+    <%= f.date_select :entrydate, {:include_blank => true} %>
   </div>
   <div>
     <%= f.label :ticker %> <%= f.text_field :ticker %>
