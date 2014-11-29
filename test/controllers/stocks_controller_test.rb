@@ -21,6 +21,9 @@ class StocksControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:stocks)
+    assert_select 'h3'
+    assert_select '.btn-xs'
+    assert_select 'th', 13
   end
 
   test "should get stock new" do

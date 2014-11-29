@@ -26,6 +26,9 @@ class OptionsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:options)
+    assert_select 'h3'
+    assert_select '.btn-xs'
+    assert_select 'th', 15
   end
 
   test "should get options new" do
