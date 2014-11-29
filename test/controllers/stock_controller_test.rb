@@ -29,7 +29,7 @@ class StocksControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
-  test "should redirect destroy for wrong stock" do
+  test "should redirect destroy stock for wrong user" do
     log_in_as(users(:gandolf))
     stock = stocks(:one)
     assert_no_difference 'Stock.count' do

@@ -5,18 +5,21 @@
 <%= form_for(@option) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-
+  <div>
+    <%= f.label :entrydate %><br />
+    <%= f.date_select :entrydate, {:include_blank => true, :default => nil} %>
+  </div>
   <div>
     <%= f.label :ticker %><br />
     <%= f.text_field :ticker %>
   </div>
   <div>
-    <%= f.radio_button :side, "call" %>  <%= f.label :side_call, "call" %>
-    <%= f.radio_button :side, "put" %>  <%= f.label :side_put, "put" %>
+    <%= f.radio_button :side, "Call" %>  <%= f.label :side_call, "Call" %>
+    <%= f.radio_button :side, "Put" %>  <%= f.label :side_put, "Put" %>
   </div>
   <div>
-    <%= f.radio_button :optiontype, "buy" %>  <%= f.label :optiontype_buy, "buy" %>
-    <%= f.radio_button :optiontype, "sell" %>  <%= f.label :optiontype_sell, "sell" %>
+    <%= f.radio_button :optiontype, "Buy" %>  <%= f.label :optiontype_buy, "Buy" %>
+    <%= f.radio_button :optiontype, "Sell" %>  <%= f.label :optiontype_sell, "Sell" %>
   </div>
   <div>
     <%= f.label :expiration %><br />
@@ -41,6 +44,13 @@
   <div>
     <%= f.label :entryfee %><br />
     <%= f.text_field :entryfee %>
+  </div>
+
+<hr />
+
+  <div>
+    <%= f.label :exitdate %><br />
+    <%= f.date_select :exitdate, {:include_blank => true} %>
   </div>
   <div>
     <%= f.label :exitprice %><br />

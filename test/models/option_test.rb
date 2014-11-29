@@ -4,7 +4,7 @@ class OptionTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:harry)
-    @option = @user.options.build(ticker: "BAC", side: "Buy", optiontype: "Call", contracts: "5", size: "100", expiration: "01/15/2015", strike: "16", entryprice: "0.25", entryfee: "13.74", exitprice: " ", exitfee: "13.74")
+    @option = @user.options.build(ticker: "BAC", side: "Buy", optiontype: "Call", contracts: "5", size: "100", expiration: "01/15/2015", strike: "16", entryprice: "0.25", entryfee: "13.74", exitprice: "", exitfee: "13.74", entrydate: Time.zone.now, exitdate: "")
   end
 
   test "option should be valid" do
@@ -17,6 +17,10 @@ class OptionTest < ActiveSupport::TestCase
     assert_not @option.valid?
   end
 
+  test "option entry date should be present" do
+    @option.entrydate = " "
+    assert_not @option.valid?
+  end
   test "option ticker should be present" do
     @option.ticker = " "
     assert_not @option.valid?
