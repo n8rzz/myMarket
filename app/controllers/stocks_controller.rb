@@ -1,8 +1,9 @@
 class StocksController < ApplicationController
   before_action :logged_in_user
+  before_action :correct_user, only: :destroy
 
   def index
-    @stocks = Stock.all
+    @stocks = current_user.stocks.all
   end
 
   def show
@@ -47,7 +48,13 @@ class StocksController < ApplicationController
   private
 
     def stock_params
-      params.require(:stock).permit(:ticker, :shares, :entryprice, :entryfee, :exitprice, :exitfee)
+      params.require(:stock).permit(:ticker, :shares, :entryprice, :entryfee, :exitprice, :exitfee, :entrydate, :exitdate)
     end
+
+    def correct_user
+      @stock = current_user.stocks.find_by(id: params[:id])
+      redirect_to root_url if @stock.nil?
+    end
+
 
 end

@@ -1,9 +1,9 @@
 class OptionsController < ApplicationController
   before_action :logged_in_user
-
+  before_action :correct_user, only: :destroy
 
   def index
-    @options = Option.all
+    @options = current_user.options.all
   end
 
   def show
@@ -47,7 +47,12 @@ class OptionsController < ApplicationController
   private
 
     def option_params
-      params.require(:option).permit(:ticker, :side, :optiontype, :expiration, :contracts, :size, :strike, :entryprice, :entryfee, :exitprice, :exitfee)
+      params.require(:option).permit(:ticker, :side, :optiontype, :expiration, :contracts, :size, :strike, :entryprice, :entryfee, :exitprice, :exitfee, :entrydate, :exitdate)
+    end
+
+    def correct_user
+      @option = current_user.options.find_by(id: params[:id])
+      redirect_to root_url if @option.nil?
     end
 
 end

@@ -32,6 +32,15 @@ class OptionsControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
+  test "should redirect destroy option for wrong user" do
+    log_in_as(users(:gandolf))
+    option = options(:one)
+    assert_no_difference 'Option.count' do
+      delete :destroy, id: option
+    end
+    assert_redirected_to root_url
+  end
+
   test "should get options index" do
     log_in_as(@user)
     get :index

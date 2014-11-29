@@ -4,17 +4,23 @@
   </button>
 </h3>
 
-<table class="table" cellpadding="0" cellpadding="0">
+<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
   <thead>
-    <tr>
-      <th scop="col">ticker</th>
-      <th scop="col">shares</th>
-      <th scop="col">entry $</th>
-      <th scop="col">entry fee</th>
-      <th scop="col">exit $</th>
-      <th scop="col">exit fee</th>
-      <th scop="col">actions</th>
-    </tr>
+          <tr>
+            <th scope="col">ticker</th>
+            <th scope="col">shares</th>
+            <th scope="col">entry $</th>
+            <th scope="col">current $</th>
+            <th scope="col">p/l $</th>
+            <th scope="col">p/l %</th>
+            <th scope="col">exit $</th>
+            <th scope="col">entry fee</th>
+            <th scope="col">exit fee</th>
+            <th scope="col">entry date</th>
+            <th scope="col">exit date</th>
+            <th scope="col">days held</th>
+            <th scope="col">actions</th>
+          </tr>
   </thead>
   <tbody>
 
@@ -23,9 +29,15 @@
       <td><%= link_to stock.ticker, stock %></td>
       <td><%= stock.shares %></td>
       <td><%= number_with_precision stock.entryprice, :precision => 4 %></td>
-      <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
+      <td>{{ cur.price }}</td>
+      <td>{{ cur.pld }}</td>
+      <td>{{ cur.plp }}</td>
       <td><%= number_with_precision stock.exitprice, :precision => 4 %></td>
+      <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
       <td><%= number_with_precision stock.exitfee, :precision => 2 %></td>
+      <td><%= stock.entrydate.to_s(:trade_date) %></td>
+      <td>{{ exit.date }}</td>
+      <td>{{ days.held }}</td>
       <td>
         <div class="btn-toolbar" role="toolbar">
           <div class="btn-group btn-group-xs" role="group" aria-label="">

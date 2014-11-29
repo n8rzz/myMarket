@@ -5,27 +5,37 @@
       <%= link_to '<- Back to Stocks', stocks_path, class: "btn btn-default" %>
     </div>
 
-    <h1><%= @stock.ticker %></h1>
-
     <table class="table" cellpadding="0" cellpadding="0">
       <tr>
-        <th scope="row">shares</th>
+        <th scope="row"><h1><%= @stock.ticker %></h1></th>
+        <td>{{ cur.price }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Entry Date</th>
+        <td><%= @stock.entrydate.to_s(:trade_date) %></td>
+      </tr>
+      <tr>
+        <th scope="row">Shares</th>
         <td><%= @stock.shares %></td>
       </tr>
       <tr>
-        <th scope="row">entry $</th>
+        <th scope="row">Entry $</th>
         <td><%= number_with_precision @stock.entryprice, :precision => 4 %></td>
       </tr>
       <tr>
-        <th scope="row">entry fee</th>
+        <th scope="row">Entry fee</th>
         <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
       </tr>
       <tr>
-        <th scope="row">exit $</th>
+        <th scope="row">Exit Date</th>
+        <td><%= @stock.exitdate %></td>
+      </tr>
+      <tr>
+        <th scope="row">Exit $</th>
         <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
       </tr>
       <tr>
-        <th scope="row">exit fee</th>
+        <th scope="row">Exit fee</th>
         <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
       </tr>
     </table>
@@ -39,12 +49,16 @@
   </div><!-- /.col-md-4 -->
 
   <div class="col-xs-12 col-sm-8">
-    <%= image_tag("charts-placeholder.jpg", size: "600x300") %>
-
+    {{ charts }}
+    <br />
+    {{ charts }}
   </div><!-- /.col-md-8 -->
+
 </div><!-- /.row -->
 
-<br />
+
+<br /><br />
+
 
 <div class="row">
   <div class="container">
