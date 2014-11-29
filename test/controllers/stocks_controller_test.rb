@@ -47,13 +47,6 @@ class StocksControllerTest < ActionController::TestCase
   end
 
 
-  test "should redirect create stock when not logged in" do
-    assert_no_difference 'Stock.count' do
-      post :create, stock: @baba
-      end
-    assert_redirected_to login_url
-  end
-
   test "should redirect destroy when not logged in" do
     assert_no_difference 'Stock.count' do
       delete :destroy, id: @stock
