@@ -55,5 +55,4 @@ class StocksController < ApplicationController
       redirect_to root_url if @stock.nil?
     end
 
-
 end

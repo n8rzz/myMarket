@@ -40,10 +40,26 @@ class StockTest < ActiveSupport::TestCase
     @stock.entryprice = " "
     assert_not @stock.valid?
   end
+  test "stock entry price should be greater than 0.0001" do
+    @stock.entryprice = -1
+    assert_not @stock.valid?
+    @stock.entryprice = 0
+    assert_not @stock.valid?
+    @stock.entryprice = 0.0001
+    assert @stock.valid?
+  end
 
   test "stock entry fee should be present" do
     @stock.entryfee = " "
     assert_not @stock.valid?
+  end
+  test "stock entry fee should be greater than 0.01" do
+    @stock.entryfee = -1
+    assert_not @stock.valid?
+    @stock.entryfee = 0
+    assert_not @stock.valid?
+    @stock.entryfee = 0.01
+    assert @stock.valid?
   end
 
   test "stock entry date should be present" do

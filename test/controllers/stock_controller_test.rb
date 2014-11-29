@@ -16,14 +16,14 @@ class StocksControllerTest < ActionController::TestCase
               user_id: "1"}
   end
 
-  test "should get index" do
+  test "should get stock index" do
     log_in_as(@user)
     get :index
     assert_response :success
     assert_not_nil assigns(:stocks)
   end
 
-  test "should get new" do
+  test "should get stock new" do
     log_in_as(@user)
     get :new
     assert_response :success
