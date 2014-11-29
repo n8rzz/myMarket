@@ -33,15 +33,19 @@ Stock.create!(ticker: "HAL",
               entryprice: "53.66",
               entryfee: "9.99",
               exitprice: "",
-              exitfee: "",
+              exitfee: " ",
+              entrydate: 2.months.ago,
+              exitdate: " ",
               user_id: "1")
 
 Stock.create!(ticker: "CAT",
               shares: "10",
               entryprice: "101.07",
               entryfee: "9.99",
-              exitprice: "",
-              exitfee: "",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: 1.month.ago,
+              exitdate: " ",
               user_id: "1")
 
 Stock.create!(ticker: "AMD",
@@ -50,6 +54,8 @@ Stock.create!(ticker: "AMD",
               entryfee: "9.99",
               exitprice: "3.22",
               exitfee: "9.99",
+              entrydate: 1.year.ago,
+              exitdate: " ",
               user_id: "1")
 
 Option.create!(ticker: "BAC",
@@ -124,6 +130,8 @@ Stock.create!(ticker: "HAL",
               entryfee: "9.99",
               exitprice: "",
               exitfee: "",
+              entrydate: Time.zone.now,
+              exitdate: "",
               user_id: "2")
 
 Stock.create!(ticker: "CAT",
@@ -132,6 +140,8 @@ Stock.create!(ticker: "CAT",
               entryfee: "9.99",
               exitprice: "",
               exitfee: "",
+              entrydate: Time.zone.now,
+              exitdate: "",
               user_id: "2")
 
 Option.create!(ticker: "CAT",

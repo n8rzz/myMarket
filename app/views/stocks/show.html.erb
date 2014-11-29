@@ -5,9 +5,15 @@
       <%= link_to '<- Back to Stocks', stocks_path, class: "btn btn-default" %>
     </div>
 
-    <h1><%= @stock.ticker %></h1>
-
     <table class="table" cellpadding="0" cellpadding="0">
+      <tr>
+        <th scope="row"><h1><%= @stock.ticker %></h1></th>
+        <td>{{ cur.price }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Entry Date</th>
+        <td><%= @stock.entrydate.to_s(:trade_date) %></td>
+      </tr>
       <tr>
         <th scope="row">Shares</th>
         <td><%= @stock.shares %></td>
@@ -19,6 +25,10 @@
       <tr>
         <th scope="row">Entry fee</th>
         <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
+      </tr>
+      <tr>
+        <th scope="row">Exit Date</th>
+        <td><%= @stock.exitdate %></td>
       </tr>
       <tr>
         <th scope="row">Exit $</th>

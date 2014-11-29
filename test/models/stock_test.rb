@@ -4,7 +4,7 @@ class StockTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:harry)
-    @stock = @user.stocks.build(ticker: "HAL", shares: "100", entryprice: "53.66", entryfee: "9.99", exitprice: "", exitfee: "")
+    @stock = @user.stocks.build(ticker: "HAL", shares: "100", entryprice: "53.66", entryfee: "9.99", exitprice: "", exitfee: "", entrydate: Time.zone.now, exitdate: "")
   end
 
   test "stock should be vaild" do
@@ -43,6 +43,11 @@ class StockTest < ActiveSupport::TestCase
 
   test "stock entry fee should be present" do
     @stock.entryfee = " "
+    assert_not @stock.valid?
+  end
+
+  test "stock entry date should be present" do
+    @stock.entrydate = " "
     assert_not @stock.valid?
   end
 
