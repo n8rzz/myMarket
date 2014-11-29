@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   ticker: BABA
   shares: 5
   entryprice: 89.77
   entryfee: 9.99
   exitprice: nil
   exitfee: nil
-  entrydate: 02/25/2014
+  entrydate: Time.zone.now
   exitdate: nil
   user_id: 1
 
