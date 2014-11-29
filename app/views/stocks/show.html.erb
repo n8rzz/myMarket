@@ -15,16 +15,28 @@
         <td><%= @stock.entrydate.to_s(:trade_date) %></td>
       </tr>
       <tr>
+        <th scope="row">Days Held</th>
+        <td><%= time_ago_in_words(@stock.entrydate) %></td>
+      </tr>
+      <tr>
         <th scope="row">Shares</th>
         <td><%= @stock.shares %></td>
       </tr>
       <tr>
         <th scope="row">Entry $</th>
-        <td><%= number_with_precision @stock.entryprice, :precision => 4 %></td>
+        <td><%= number_to_currency @stock.entryprice, :precision => 4 %></td>
       </tr>
       <tr>
         <th scope="row">Entry fee</th>
-        <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
+        <td><%= number_to_currency @stock.entryfee %></td>
+      </tr>
+      <tr>
+        <th scope="row">Gross Liquidity</th>
+        <td><%= number_to_currency @stock.gross_liquidity, :precision => 2 %></td>
+      </tr>
+      <tr>
+        <th scope="row">Net Liquidity</th>
+        <td><%= number_to_currency @stock.net_liquidity, :precision => 2 %></td>
       </tr>
 
       <% if @stock.exitdate %>
@@ -37,21 +49,17 @@
       <% if @stock.exitprice %>
         <tr>
           <th scope="row">Exit $</th>
-          <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
+          <td><%= number_to_currency @stock.exitprice, :precision => 4 %></td>
         </tr>
       <% end %>
 
       <% if @stock.exitfee %>
         <tr>
           <th scope="row">Exit fee</th>
-          <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
+          <td><%= number_to_currency @stock.exitfee %></td>
         </tr>
       <% end %>
 
-      <tr>
-        <th scope="row">Days Held</th>
-        <td><%= time_ago_in_words(@stock.entrydate) %></td>
-      </tr>
     </table>
 
     <div class="btn-toolbar" role="toolbar">
