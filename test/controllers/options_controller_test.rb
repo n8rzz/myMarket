@@ -51,12 +51,6 @@ class OptionsControllerTest < ActionController::TestCase
     assert_redirected_to option_path(assigns(:option))
   end
 
-  test "should redirect create option when not logged in" do
-    assert_no_difference 'Option.count' do
-      post :create, option: @option
-      end
-    assert_redirected_to login_url
-  end
 
   test "should redirect destroy when not logged in" do
     assert_no_difference 'Option.count' do

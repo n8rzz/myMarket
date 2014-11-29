@@ -23,13 +23,4 @@ class StocksNewTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test "should create new stock when logged in" do
-    log_in_as(@user)
-    assert_difference 'Stock.count', 1 do
-      post_via_redirect stocks_path, stock: @baba
-    end
-    assert_template 'stocks/show'
-    assert is_logged_in?
-  end
-
 end
