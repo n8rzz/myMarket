@@ -1,3 +1,5 @@
+<!-- title -->
+
 <h3>Options
   <button type="button" class="btn btn-xs btn-default">
     <span class="glyphicon glyphicon-plus"></span> <%= link_to 'New Option', new_option_path %>
@@ -41,7 +43,7 @@
       <td><%= option.exitfee %></td>
       <td><%= option.entrydate.to_s(:trade_date) %></td>
       <td><%= option.exitdate.to_s.try(:trade_date) %></td>
-      <td>{{ days.held }}</td>
+      <td><%= time_ago_in_words(option.entrydate) %></td>
       <td>
         <div class="btn-toolbar" role="toolbar">
           <div class="btn-group btn-group-xs" role="group" aria-label="">
