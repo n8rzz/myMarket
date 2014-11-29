@@ -5,7 +5,7 @@
       <%= link_to '<- Back to Stocks', stocks_path, class: "btn btn-default" %>
     </div>
 
-    <table class="table" cellpadding="0" cellpadding="0">
+    <table class="table table-striped" cellpadding="0" cellpadding="0">
       <tr>
         <th scope="row"><h1><%= @stock.ticker %></h1></th>
         <td>{{ cur.price }}</td>
@@ -26,17 +26,31 @@
         <th scope="row">Entry fee</th>
         <td><%= number_with_precision @stock.entryfee, :precision => 2 %></td>
       </tr>
+
+      <% if @stock.exitdate %>
+        <tr>
+          <th scope="row">Exit Date</th>
+          <td><%= @stock.exitdate %></td>
+        </tr>
+      <% end %>
+
+      <% if @stock.exitprice %>
+        <tr>
+          <th scope="row">Exit $</th>
+          <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
+        </tr>
+      <% end %>
+
+      <% if @stock.exitfee %>
+        <tr>
+          <th scope="row">Exit fee</th>
+          <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
+        </tr>
+      <% end %>
+
       <tr>
-        <th scope="row">Exit Date</th>
-        <td><%= @stock.exitdate %></td>
-      </tr>
-      <tr>
-        <th scope="row">Exit $</th>
-        <td><%= number_with_precision @stock.exitprice, :precision => 4 %></td>
-      </tr>
-      <tr>
-        <th scope="row">Exit fee</th>
-        <td><%= number_with_precision @stock.exitfee, :precision => 2 %></td>
+        <th scope="row">Days Held</th>
+        <td><%= time_ago_in_words(@stock.entrydate) %></td>
       </tr>
     </table>
 

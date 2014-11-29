@@ -9,6 +9,9 @@
 
     <table class="table table-striped" cellpadding="0" cellpadding="0">
         <tr>
+          <th scope="row">Entry Date</th>
+          <td><%= @option.entrydate.to_s(:trade_date) %></td>
+        <tr>
           <th scope="row">Buy/Sell</th>
           <td><%= @option.side %></td>
         </tr>
@@ -40,13 +43,24 @@
           <th scope="row">Buy Fee</th>
           <td><%= @option.entryfee %></td>
         </tr>
+
+        <% if @option.exitprice %>
+          <tr>
+            <th scope="row">Exit $</th>
+            <td><%= @option.exitprice %></td>
+          </tr>
+        <% end %>
+
+        <% if @option.exitfee %>
+          <tr>
+            <th scope="row">Sell fee</th>
+            <td><%= @option.exitfee %></td>
+          </tr>
+        <% end %>
+
         <tr>
-          <th scope="row">Exit $</th>
-          <td><%= @option.exitprice %></td>
-        </tr>
-        <tr>
-          <th scope="row">Sell fee</th>
-          <td><%= @option.exitfee %></td>
+          <th scope="row">Days Held</th>
+          <td><%= time_ago_in_words(@option.entrydate) %></td>
         </tr>
       </tbody>
     </table>
