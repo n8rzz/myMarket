@@ -8,8 +8,8 @@
   <td><%= option.strike %></td>
   <td><%= option.entryprice %></td>
   <td><%= option.entryfee %></td>
-  <td><%= option.exitprice %></td>
-  <td><%= option.exitfee %></td>
+  <td><%= option.entrydate.to_s(:trade_date) %></td>
+  <td>{{ days.held }}</td>
   <td>
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group btn-group-xs" role="group" aria-label="">
