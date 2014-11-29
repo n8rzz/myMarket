@@ -16,7 +16,6 @@ class StocksController < ApplicationController
 
   def create
     @stock = current_user.stocks.build(stock_params)
-    @stock.ticker = params[:stock][:ticker].upcase
     if @stock.save
       flash[:success] = "Stock Added!"
       redirect_to @stock

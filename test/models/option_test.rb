@@ -26,10 +26,10 @@ class OptionTest < ActiveSupport::TestCase
     assert_not @option.valid?
   end
 
-#  test "option ticker should be saved upcase" do
-#    @option.ticker = " bac"
-#    assert_not @option.valid?
-#  end
+  test "option ticker should be saved upcase" do
+    @option.ticker = "bac"
+    assert_not @option.valid?
+  end
 
   test "option ticker should be at most 6 characters" do
     @option.ticker = "a" * 7
