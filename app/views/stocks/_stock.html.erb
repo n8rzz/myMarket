@@ -7,7 +7,7 @@
   <td>{{ current.price }}</td>
   <td>{{ current.pld }}</td>
   <td>{{ current.plp }}</td>
-  <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
+  <td><%= number_to_currency stock.entryfee, :precision => 2 %></td>
   <td><%= stock.entrydate.to_s(:trade_date) %></td>
   <td><%= time_ago_in_words(stock.entrydate) %></td>
   <td>
