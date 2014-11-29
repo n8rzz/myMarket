@@ -89,3 +89,14 @@ input[type="radio"], input[type="date"], input[type="select"] {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* --- data tables --- */
+.wide-data-table {
+  font-size: 12px;
+  tr {}
+  thead {}
+  th, td {
+    padding: 3px 5px !important;
+    text-align: center;
+  }
+}

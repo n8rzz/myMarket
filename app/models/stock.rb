@@ -10,6 +10,18 @@ class Stock < ActiveRecord::Base
   validates :entrydate, presence: true
   validates :ticker, presence: true, length: { maximum: 6 }
 
+  def gross_liquidity
+    (shares * entryprice)
+  end
+
+  def net_liquidity
+    if exitfee?
+      gross_liquidity - (entryfee + exitfee)
+    else
+      gross_liquidity - (entryfee * 2)
+    end
+  end
+
   def current_price
     #https://github.com/tyrauber/stock_quote
   end
@@ -18,9 +30,6 @@ class Stock < ActiveRecord::Base
   end
 
   def profit_loss_percent
-  end
-
-  def days_held
   end
 
 end

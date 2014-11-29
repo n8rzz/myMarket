@@ -21,7 +21,7 @@
 
 		<% if @user.options.any? %>
 		<h3><%= link_to 'Options', options_path %> (<%= @user.options.count %>)  <%= link_to 'Add New Option', new_option_path, class: 'btn btn-primary btn-xs' %></h3>
-		<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
+		<table class="table table-striped table-hover wide-data-table" cellpadding="0" cellpadding="0">
 		  <thead>
 		    <tr>
 		      <th scope="col">ticker</th>
@@ -49,13 +49,15 @@
 
 		<% if @user.stocks.any? %>
 			<h3><%= link_to 'Stocks', stocks_path %> (<%= @user.stocks.count %>)  <%= link_to 'Add New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h3>
-			<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
+			<table class="table table-striped table-hover wide-data-table" cellpadding="0" cellpadding="0">
 			  <thead>
 			    <tr>
 			      <th scope="col">ticker</th>
+						<th scope="col">gross liq</th>
+			      <th scope="col">net liq</th>
 			      <th scope="col">shares</th>
 			      <th scope="col">entry $</th>
-			      <th scope="col">current $</th>
+			      <th scope="col">current</th>
 			      <th scope="col">p/l $</th>
 			      <th scope="col">p/l %</th>
 			      <th scope="col">entry fee</th>
