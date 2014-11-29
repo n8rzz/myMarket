@@ -69,6 +69,8 @@ Option.create!(ticker: "BAC",
                entryfee: "13.74",
                exitprice: " ",
                exitfee: "13.74",
+               entrydate: 2.months.ago,
+               exitdate: " ",
                user_id: "1")
 
 Option.create!(ticker: "CAT",
@@ -82,6 +84,8 @@ Option.create!(ticker: "CAT",
                entryfee: "17.74",
                exitprice: " ",
                exitfee: "17.74",
+               entrydate: 2.weeks.ago,
+               exitdate: " ",
                user_id: "1")
 
 Option.create!(ticker: "AMD",
@@ -95,6 +99,8 @@ Option.create!(ticker: "AMD",
                entryfee: "17.74",
                exitprice: " ",
                exitfee: "17.74",
+               entrydate: 2.days.ago,
+               exitdate: " ",
                user_id: "1")
 
 Option.create!(ticker: "CAT",
@@ -108,6 +114,8 @@ Option.create!(ticker: "CAT",
                entryfee: "13.74",
                exitprice: "0.88",
                exitfee: "13.74",
+               entrydate: 3.weeks.ago,
+               exitdate: 2.weeks.ago,
                user_id: "1")
 
 Option.create!(ticker: "CAT",
@@ -121,6 +129,8 @@ Option.create!(ticker: "CAT",
                entryfee: "13.74",
                exitprice: " ",
                exitfee: "13.74",
+               entrydate: 2.days.ago,
+               exitdate: " ",
                user_id: "1")
 
 ### stocks/options for user_id(2)
@@ -153,6 +163,8 @@ Option.create!(ticker: "CAT",
                strike: "95",
                entryprice: "1.05",
                entryfee: "13.74",
-               exitprice: " ",
+               exitprice: "",
                exitfee: "13.74",
+               entrydate: 4.days.ago,
+               exitdate: " ",
                user_id: "2")

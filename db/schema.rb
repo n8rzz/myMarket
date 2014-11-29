@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128185606) do
+ActiveRecord::Schema.define(version: 20141129004437) do
 
   create_table "options", force: true do |t|
     t.string   "ticker"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20141128185606) do
     t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.datetime "entrydate"
+    t.datetime "exitdate"
   end
 
   add_index "options", ["user_id", "ticker", "created_at"], name: "index_options_on_user_id_and_ticker_and_created_at"
