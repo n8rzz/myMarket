@@ -3,7 +3,7 @@ class OptionsController < ApplicationController
 
 
   def index
-    @options = Option.all
+    @options = current_user.options.all
   end
 
   def show

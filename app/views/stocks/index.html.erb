@@ -4,7 +4,7 @@
   </button>
 </h3>
 
-<table class="table" cellpadding="0" cellpadding="0">
+<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
   <thead>
           <tr>
             <th scope="col">ticker</th>
@@ -36,7 +36,7 @@
       <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
       <td><%= number_with_precision stock.exitfee, :precision => 2 %></td>
       <td><%= stock.entrydate.to_s(:trade_date) %></td>
-      <td><%= stock.exitdate.to_s.try(:trade_date) %></td>
+      <td>{{ exit.date }}</td>
       <td>{{ days.held }}</td>
       <td>
         <div class="btn-toolbar" role="toolbar">

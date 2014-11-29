@@ -29,11 +29,13 @@ class StocksControllerTest < ActionController::TestCase
     assert_redirected_to login_url
   end
 
-#  test "should get stocks index" do
-#    log_in_as(@user)
-#    get :index
-#    assert_response :success
-#    assert_not_nil assigns(:stocks)
-#  end
+  test "should redirect destroy for wrong stock" do
+    log_in_as(users(:gandolf))
+    stock = stocks(:one)
+    assert_no_difference 'Stock.count' do
+      delete :destroy, id: stock
+    end
+    assert_redirected_to root_url
+  end
 
 end

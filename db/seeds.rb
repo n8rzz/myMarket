@@ -34,7 +34,7 @@ Stock.create!(ticker: "HAL",
               entryfee: "9.99",
               exitprice: "",
               exitfee: " ",
-              entrydate: Time.zone.now,
+              entrydate: 2.months.ago,
               exitdate: " ",
               user_id: "1")
 
@@ -44,7 +44,7 @@ Stock.create!(ticker: "CAT",
               entryfee: "9.99",
               exitprice: " ",
               exitfee: " ",
-              entrydate: Time.zone.now,
+              entrydate: 1.month.ago,
               exitdate: " ",
               user_id: "1")
 
@@ -54,7 +54,7 @@ Stock.create!(ticker: "AMD",
               entryfee: "9.99",
               exitprice: "3.22",
               exitfee: "9.99",
-              entrydate: Time.zone.now,
+              entrydate: 1.year.ago,
               exitdate: " ",
               user_id: "1")
 
