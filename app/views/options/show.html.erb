@@ -40,8 +40,8 @@
           <td><%= @option.entryprice %></td>
         </tr>
         <tr>
-          <th scope="row">Buy Fee</th>
-          <td><%= @option.entryfee %></td>
+          <th scope="row">Entry Fee</th>
+          <td><%= number_to_currency @option.entryfee %></td>
         </tr>
 
         <% if @option.exitprice %>

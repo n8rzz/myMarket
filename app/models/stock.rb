@@ -10,6 +10,7 @@ class Stock < ActiveRecord::Base
   validates :entrydate, presence: true
   validates :ticker, presence: true, length: { maximum: 6 }
 
+
   def gross_liquidity
     (shares * entryprice)
   end
