@@ -89,3 +89,25 @@ input[type="radio"], input[type="date"], input[type="select"] {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* --- data tables --- */
+.wide-data-table {
+  margin-bottom: 5em;
+  font-size: 12px;
+  tr {}
+  thead {}
+  th, td {
+    padding: 3px 5px !important;
+    text-align: right;
+  }
+  th:last-child {text-align: left;}
+  td {}
+  tfoot {
+    background-color: #ddd;
+    border-top: 2px solid #888;
+    th {}
+  }
+  .wide-data-no-data {
+    background-color: #ccc;
+  }
+}

@@ -9,4 +9,17 @@ class Option < ActiveRecord::Base
   validates :entryprice, presence: true, numericality: {greater_than_or_equal_to: 0.0001}
   validates :ticker, presence: true, length: { maximum: 6 }
 
+
+  def gross_liquidity
+    (contracts * size) * entryprice
+  end
+
+  def net_liquidity
+    if exitfee?
+      gross_liquidity - (entryfee + exitfee)
+    else
+      gross_liquidity - (entryfee * 2)
+    end
+   end
+
 end

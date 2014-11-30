@@ -38,7 +38,13 @@
       <td><%= number_with_precision stock.entryfee, :precision => 2 %></td>
       <td><%= number_with_precision stock.exitfee, :precision => 2 %></td>
       <td><%= stock.entrydate.to_s(:trade_date) %></td>
-      <td><%= stock.exitdate.to_s.try(:trade_date) %></td>
+
+      <% if stock.exitdate? %>
+        <td><%= stock.exitdate.to_s(:trade_date) %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+
       <td><%= time_ago_in_words(stock.entrydate) %></td>
       <td>
         <div class="btn-toolbar" role="toolbar">

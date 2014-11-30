@@ -20,11 +20,13 @@
 	<div class="col-sm-12">
 
 		<% if @user.options.any? %>
-		<h3><%= link_to 'Options', options_path %> (<%= @user.options.count %>)  <%= link_to 'Add New Option', new_option_path, class: 'btn btn-primary btn-xs' %></h3>
-		<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
+		<h3><%= link_to 'Options', options_path %> <%= link_to 'Add New Option', new_option_path, class: 'btn btn-primary btn-xs' %></h3>
+		<table class="table table-striped table-hover wide-data-table" cellpadding="0" cellpadding="0">
 		  <thead>
 		    <tr>
 		      <th scope="col">ticker</th>
+		      <th scope="col">gross liq</th>
+		      <th scope="col">net liq</th>
 		      <th scope="col">b/s</th>
 		      <th scope="col">c/p</th>
 		      <th scope="col">contracts</th>
@@ -43,19 +45,40 @@
 			<%= render @options %>
 
 		  </tbody>
+			<tfoot>
+				<tr>
+		      <th scope="col"><%= @user.options.count %></th>
+		      <th scope="col">{{ gross liq }}</th>
+		      <th scope="col">{{ net liq }}</th>
+		      <th scope="col">{{ #b/#s }}</th>
+		      <th scope="col">{{ #c/#p }}</th>
+		      <th scope="col">{{ t.con }}</th>
+		      <th scope="col" class="wide-data-no-data"></th>
+		      <th scope="col" class="wide-data-no-data"></th>
+		      <th scope="col" class="wide-data-no-data"></th>
+		      <th scope="col" class="wide-data-no-data"></th>
+		      <th scope="col">{{ t.fee }}</th>
+		      <th scope="col"></th>
+		      <th scope="col">{{ avg.days }}</th>
+		      <th scope="col" class="wide-data-no-data"></th>
+		    </tr>
+				</tr>
+			</tfoot>
 		</table>
 		<% end %>
 
 
 		<% if @user.stocks.any? %>
-			<h3><%= link_to 'Stocks', stocks_path %> (<%= @user.stocks.count %>)  <%= link_to 'Add New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h3>
-			<table class="table table-striped table-hover" cellpadding="0" cellpadding="0">
+			<h3><%= link_to 'Stocks', stocks_path %> <%= link_to 'Add New Stock', new_stock_path, class: 'btn btn-primary btn-xs' %></h3>
+			<table class="table table-striped table-hover wide-data-table" cellpadding="0" cellpadding="0">
 			  <thead>
 			    <tr>
 			      <th scope="col">ticker</th>
+						<th scope="col">gross liq</th>
+			      <th scope="col">net liq</th>
 			      <th scope="col">shares</th>
 			      <th scope="col">entry $</th>
-			      <th scope="col">current $</th>
+			      <th scope="col">current</th>
 			      <th scope="col">p/l $</th>
 			      <th scope="col">p/l %</th>
 			      <th scope="col">entry fee</th>
@@ -69,6 +92,22 @@
 					<%= render @stocks %>
 
 			  </tbody>
+			  <tfoot>
+			  	<tr>
+			  		<th scope="col"><%= @user.stocks.count %></th>
+						<th scope="col">{{ gross.liq }}</th>
+			      <th scope="col">{{ net.liq }}</th>
+			      <th scope="col" class="wide-data-no-data"></th>
+			      <th scope="col" class="wide-data-no-data"></th>
+			      <th scope="col" class="wide-data-no-data"></th>
+			      <th scope="col">{{ total.pld }}</th>
+			      <th scope="col">{{ total.plp }}</th>
+			      <th scope="col">{{ total.fees }}</th>
+			      <th scope="col" class="wide-data-no-data"></th>
+			      <th scope="col">{{ avg.days }}</th>
+			      <th scope="col" class="wide-data-no-data"></th>
+			  	</tr>
+			  </tfoot>
 			</table>
 		<% end %>
 
