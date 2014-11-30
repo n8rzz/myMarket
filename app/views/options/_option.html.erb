@@ -1,7 +1,7 @@
 <tr>
   <td><%= link_to option.ticker, option %></td>
-  <td>{{ gross liq }}</td>
-  <td>{{ net liq }}</td>
+  <td><%= number_to_currency option.gross_liquidity %></td>
+  <td><%= number_to_currency option.net_liquidity %></td>
   <td><%= option.side %></td>
   <td><%= option.optiontype %></td>
   <td><%= option.contracts %></td>
