@@ -44,7 +44,7 @@
       <% if @stock.exitdate %>
         <tr>
           <th scope="row">Exit Date</th>
-          <td><%= @stock.exitdate %></td>
+          <td><%= @stock.exitdate.to_s(:trade_date) %></td>
         </tr>
       <% end %>
 
