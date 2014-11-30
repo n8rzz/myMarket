@@ -31,14 +31,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", help_path
 	end #layout links after successful login
 
-	test "stocks show page after successful login" do
-		get login_path
-		post login_path, session: { email: @user.email, password: 'password' }
-		assert is_logged_in?
-		get stocks_path
-		assert_template 'stocks/index'
-		#table headers
-	end
+#	test "stocks show page after successful login" do
+#	end
 
 	test "options show page after successful login" do
 		get login_path

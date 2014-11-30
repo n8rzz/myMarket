@@ -1,3 +1,5 @@
+<!-- title -->
+
 <h3>Options
   <button type="button" class="btn btn-xs btn-default">
     <span class="glyphicon glyphicon-plus"></span> <%= link_to 'New Option', new_option_path %>
@@ -15,9 +17,12 @@
       <th scope="col">expiration</th>
       <th scope="col">strike</th>
       <th scope="col">entry$</th>
-      <th scope="col">b fee</th>
       <th scope="col">exit $</th>
+      <th scope="col">b fee</th>
       <th scope="col">s fee</th>
+      <th scope="col">en date</th>
+      <th scope="col">ex date</th>
+      <th scope="col">days held</th>
       <th scope="col">actions</th>
     </tr>
   </thead>
@@ -33,9 +38,18 @@
       <td><%= option.expiration %></td>
       <td><%= option.strike %></td>
       <td><%= option.entryprice %></td>
-      <td><%= option.entryfee %></td>
       <td><%= option.exitprice %></td>
+      <td><%= option.entryfee %></td>
       <td><%= option.exitfee %></td>
+      <td><%= option.entrydate.to_s(:trade_date) %></td>
+
+      <% if option.exitdate? %>
+        <td><%= option.exitdate.to_s(:trade_date) %></td>
+      <% else %>
+        <td></td>
+      <% end %>
+
+      <td><%= time_ago_in_words(option.entrydate) %></td>
       <td>
         <div class="btn-toolbar" role="toolbar">
           <div class="btn-group btn-group-xs" role="group" aria-label="">

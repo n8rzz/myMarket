@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:trade_date] = "%Y/%m/%d"

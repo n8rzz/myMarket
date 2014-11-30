@@ -32,9 +32,12 @@ Stock.create!(ticker: "HAL",
               shares: "100",
               entryprice: "53.66",
               entryfee: "9.99",
-              exitprice: "",
-              exitfee: "",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: 2.months.ago,
+              exitdate: " ",
               user_id: "1")
+<<<<<<< HEAD
 
 Stock.create!(ticker: "HAL",
               shares: "100",
@@ -44,20 +47,34 @@ Stock.create!(ticker: "HAL",
               exitfee: "",
               user_id: "1")
 
+=======
+>>>>>>> develop
 Stock.create!(ticker: "CAT",
               shares: "10",
               entryprice: "101.07",
               entryfee: "9.99",
-              exitprice: "",
-              exitfee: "",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: 1.month.ago,
+              exitdate: " ",
               user_id: "1")
-
+Stock.create!(ticker: "CAT",
+              shares: "10",
+              entryprice: "98.50",
+              entryfee: "9.99",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: 2.months.ago,
+              exitdate: " ",
+              user_id: "1")
 Stock.create!(ticker: "AMD",
               shares: "2500",
               entryprice: "4.02",
               entryfee: "9.99",
               exitprice: "3.22",
               exitfee: "9.99",
+              entrydate: 1.year.ago,
+              exitdate: 3.months.ago,
               user_id: "1")
 
 Option.create!(ticker: "BAC",
@@ -71,8 +88,9 @@ Option.create!(ticker: "BAC",
                entryfee: "13.74",
                exitprice: "",
                exitfee: "13.74",
+               entrydate: 2.months.ago,
+               exitdate: " ",
                user_id: "1")
-
 Option.create!(ticker: "CAT",
                side: "Buy",
                optiontype: "Put",
@@ -84,8 +102,9 @@ Option.create!(ticker: "CAT",
                entryfee: "17.74",
                exitprice: "",
                exitfee: "17.74",
+               entrydate: 2.weeks.ago,
+               exitdate: " ",
                user_id: "1")
-
 Option.create!(ticker: "AMD",
                side: "Sell",
                optiontype: "Call",
@@ -95,10 +114,16 @@ Option.create!(ticker: "AMD",
                strike: "3",
                entryprice: "0.15",
                entryfee: "17.74",
+<<<<<<< HEAD
                exitprice: "",
                exitfee: "17.74",
+=======
+               exitprice: " ",
+               exitfee: " ",
+               entrydate: 2.days.ago,
+               exitdate: " ",
+>>>>>>> develop
                user_id: "1")
-
 Option.create!(ticker: "CAT",
                side: "Buy",
                optiontype: "Put",
@@ -110,8 +135,9 @@ Option.create!(ticker: "CAT",
                entryfee: "13.74",
                exitprice: "0.88",
                exitfee: "13.74",
+               entrydate: 3.weeks.ago,
+               exitdate: 2.weeks.ago,
                user_id: "1")
-
 Option.create!(ticker: "CAT",
                side: "Buy",
                optiontype: "Call",
@@ -121,8 +147,15 @@ Option.create!(ticker: "CAT",
                strike: "95",
                entryprice: "1.05",
                entryfee: "13.74",
+<<<<<<< HEAD
                exitprice: "",
                exitfee: "13.74",
+=======
+               exitprice: " ",
+               exitfee: " ",
+               entrydate: 2.days.ago,
+               exitdate: " ",
+>>>>>>> develop
                user_id: "1")
 
 ### stocks/options for user_id(2)
@@ -130,18 +163,20 @@ Stock.create!(ticker: "HAL",
               shares: "100",
               entryprice: "53.66",
               entryfee: "9.99",
-              exitprice: "",
-              exitfee: "",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: Time.zone.now,
+              exitdate: "",
               user_id: "2")
-
 Stock.create!(ticker: "CAT",
               shares: "10",
               entryprice: "101.07",
               entryfee: "9.99",
-              exitprice: "",
-              exitfee: "",
+              exitprice: " ",
+              exitfee: " ",
+              entrydate: Time.zone.now,
+              exitdate: " ",
               user_id: "2")
-
 Option.create!(ticker: "CAT",
                side: "Buy",
                optiontype: "Call",
@@ -153,4 +188,6 @@ Option.create!(ticker: "CAT",
                entryfee: "13.74",
                exitprice: "",
                exitfee: "13.74",
+               entrydate: 4.days.ago,
+               exitdate: " ",
                user_id: "2")

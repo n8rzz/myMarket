@@ -10,6 +10,8 @@ one:
   strike: 90.00
   entryprice: 1.88
   entryfee: 13.74
-  exitprice: 0
-  exitfee: 13.74
+  exitprice: nil
+  exitfee: nil
+  entrydate: Time.zone.now
+  exitdate: nil
   user_id: 1
