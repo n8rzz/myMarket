@@ -92,6 +92,7 @@ input[type="radio"], input[type="date"], input[type="select"] {
 
 /* --- data tables --- */
 .wide-data-table {
+  margin-bottom: 5em;
   font-size: 12px;
   tr {}
   thead {}
@@ -102,8 +103,11 @@ input[type="radio"], input[type="date"], input[type="select"] {
   th:last-child {text-align: left;}
   td {}
   tfoot {
-    background-color: #eee;
-    border-top: 2px double #999;
+    background-color: #ddd;
+    border-top: 2px solid #888;
     th {}
+  }
+  .wide-data-no-data {
+    background-color: #ccc;
   }
 }
